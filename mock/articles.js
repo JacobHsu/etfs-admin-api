@@ -1,10 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+const data = require("./data/etfs");
 const tslib_1 = require("tslib");
 const faker_1 = tslib_1.__importDefault(require("faker"));
 const articleList = [];
-const articleCount = 100;
+const articleCount = 10;
 const mockFullContent = '<p>I am testing data, I am testing data.</p><p><img src="https://wpimg.wallstcn.com/4c69009c-0fd4-4153-b112-6cb53d1cf943"></p>';
+
 for (let i = 0; i < articleCount; i++) {
     articleList.push({
         id: i,
@@ -24,6 +26,29 @@ for (let i = 0; i < articleCount; i++) {
         pageviews: faker_1.default.random.number({ min: 300, max: 500 })
     });
 }
+
+for (let i = 0; i < data.etfs.length; i++) {
+    articleList.push({
+      id: i,
+      status: faker_1.default.random.arrayElement(['published', 'draft']),
+      name: data.etfs[i].etf,
+      title: data.etfs[i].name,
+      tag: data.etfs[i].tag,
+      abstractContent: faker_1.default.lorem.sentences(2),
+      fullContent: mockFullContent,
+      sourceURL: faker_1.default.internet.url(),
+      imageURL: faker_1.default.image.imageUrl(),
+      timestamp: faker_1.default.date.past().getTime(),
+      platforms: [faker_1.default.random.arrayElement(['a-platform', 'b-platform', 'c-platform'])],
+      disableComment: faker_1.default.random.boolean(),
+      importance: data.etfs[i].star,
+      issuer: data.etfs[i].issuer,
+      reviewer: faker_1.default.name.findName(),
+      type: 'ETF',
+      pageviews: faker_1.default.random.number({ min: 300, max: 500 })
+    })
+  }
+
 exports.getArticles = (req, res) => {
     const { importance, type, title, page = 1, limit = 20, sort } = req.query;
     let mockList = articleList.filter(item => {

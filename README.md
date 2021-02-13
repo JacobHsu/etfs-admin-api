@@ -1,6 +1,10 @@
 # vue-typescript-admin-mock-server
 
 http://localhost:9528/mock-api/v1/articles
+http://localhost:9528/mock-api/v1/articles?page=1&limit=10&type=CN&sort=id
+http://localhost:9528/mock-api/v1/articles?page=1&limit=10&type=ETF&sort=id
+https://etfs-admin-api.jacobhsu.vercel.app/mock-api/v1/articles
+
 
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
@@ -11,6 +15,10 @@ Mock server for [vue-typecript-admin-template](https://github.com/Armour/vue-typ
 ## References
 
 [Now：在雲端部屬你的網站、後端功能](https://noob.tw/now-sh/)
+
+`now`
+
+https://etfs-admin-api.jacobhsu.vercel.app/mock-api/v1/articles?page=1&limit=125&type=ETF&sort=id
 
 ## Demo link
 
