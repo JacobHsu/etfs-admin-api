@@ -18,6 +18,7 @@ Mock server for [vue-typecript-admin-template](https://github.com/Armour/vue-typ
 
 `now`
 
+https://etfs-admin-api-jacobhsu.vercel.app/mock-api/v1/articles
 https://etfs-admin-api.jacobhsu.vercel.app/mock-api/v1/articles?page=1&limit=125&type=ETF&sort=id
 
 ## Demo link
